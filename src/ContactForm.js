@@ -32,8 +32,10 @@ const ContactForm = () => {
 
   return (
     <div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
+    <h2>Contact Us</h2>
+    <form onSubmit={handleSubmit}>
+      {/* First Row: First Name and Last Name */}
+      <div className="form-row">
         <div>
           <label>First Name:</label>
           <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
@@ -42,22 +44,36 @@ const ContactForm = () => {
           <label>Last Name:</label>
           <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
         </div>
+      </div>
+  
+      {/* Second Row: Username */}
+      <div className="form-row">
         <div>
           <label>Username:</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} required />
         </div>
+      </div>
+  
+      {/* Third Row: Email */}
+      <div className="form-row">
         <div>
           <label>Email:</label>
           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
+      </div>
+  
+      {/* Fourth Row: Message */}
+      <div className="form-row">
         <div>
           <label>Message:</label>
           <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-};
-
+      </div>
+  
+      {/* Submit Button */}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  )}
 export default ContactForm;
